@@ -6,4 +6,4 @@ run: web
 web: run-web
 
 run-web:
-	cd web && bun run dev
+	cd clients/web && bun run dev
