@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "@heroui/styles";
+
+/* Ties Tailwind's `dark:` variant to the same `data-theme` attribute HeroUI's
+   own CSS variables switch on, so both stay in sync under app/theme/theme-provider.tsx. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
@@ -7,9 +12,5 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  @apply bg-background text-foreground;
 }
